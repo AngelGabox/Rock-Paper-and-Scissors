@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <script type='text/javascript' src="index.js" async></script>
+  <!-- <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style> -->
+</head>
+<body>
+    <div class='wrapper'>
+      <div class="scoreboard">
+        <div>
+          <h2>ROCK</h2>
+          <h2>PAPER</h2>
+          <h2>SCISSORS</h2>
+          <h2>LIZARD</h2>
+          <h2>SPOCK</h2>
+        </div>
+        <div class="score">
+          <h5 class="score-txt">SCORE</h5>
+          <span class="number" >0</span>
+        </div>
+      </div>
+
+      <div class='hands'>
+        <div class="hand scissors">
+          <img src="assests/Scissors.png" onclick="play(3)">
+        </div>
+        <div class="hand paper">
+          <img src="assests/Paper.png" onclick="play(2)">
+        </div>
+        <div class='hand rock'>
+          <img src="assests/Rock.png" onclick="play(1)">
+        </div>
+        <div class="hand lizard">
+          <img src="assests/lizard.png" onclick="play(4)">
+        </div>
+        <div class="hand spock">
+          <img src="assests/spock.png" onclick="play(5)">
+        </div>
+      </div>
+
+      <div class='result' >
+        <div class='userHand'>
+          <div class="user_txt"><h1>You Picked</h1></div>
+          <img id='userPicked' src="" >
+        </div>
+        <div class="referee">
+          <div class="txt"><h1>You Win</h1></div>
+          <div class="reset" onclick="playAgain()"><h4>Play again</h4></div>
+        </div>
+        <div class="handComputer">
+          <div class="haus_txt"><h1>The Hause Picked</h1></div>
+          <img id='hausePicked' src="./assests/Paper.png" >
+        </div>
+      </div>
+        <div class="rules" onclick="rulesEnter()">RULES</div>
+        <div class="rulesquit" onclick="rulesOut()">Quit RULES</div>
+        <span class="rulespan"><img src="./images/image-rules-bonus.svg"></span>
+    </div>
+    <!-- <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Angel Martinez</a>.
+    </div> -->
+</body>
+</html>
