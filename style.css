@@ -14,13 +14,13 @@
 }
 
 * {
+    margin: 0;  
     padding: 0;
-    margin: 0;
     box-sizing: border-box;
   }
-  
   body {
     font-family: "Barlow Condensed", sans-serif;
+    scroll-behavior: auto;
   }
 
 /*
@@ -30,19 +30,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background: radial-gradient(
       134.34% 134.34% at 50% 0%,
       #1f3757 0%,
       #131537 100%
-    );
+      );
+      position: fixed;
   }
   .scoreboard {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 100vh;
+      width: 60%;
       margin-top: 20px;
       padding: 20px;
       border: 4px solid var(--header-outline);
@@ -78,13 +79,14 @@
   }
 
   .hands{
+    position: relative;
+      display: flex;
       height: 450px;
       width: 450px;
       margin-top: 50px;
       background-image: url('./images/bg-pentagon.svg');
       background-repeat: no-repeat;
       background-position:center;
-      display: flex;
       /* display: none; */
       justify-content: center;
       flex-wrap: wrap;
@@ -99,29 +101,29 @@
     width: 100px;
   }
 .hands .rock{
-    position: relative;
-    top: 310px;
+    position: absolute;
+    bottom: 35px;
     left: 55px;
   }
 .hands .paper{
-    position:relative;
-    right: -200px;
-    top: 135px;
+    position:absolute;
+    right: 20px; 
+    top: 130px;
 }
 .hands .scissors{
-    position: relative;
-    left: 140px;
-    top: 25px;
+    position: absolute;
+    left: calc(50% - 60px);
+    top: 20px;
 }
 .hands .spock{
-    right: 155px;
-    top: -90px;
-    position: relative;
+  position: absolute;
+    left: 0px;
+    top: 130px;
 }
 .hands .lizard{
-    left: -250px;
-    top: 310px;
-    position: relative;
+  position: absolute;
+    right: 75px;
+    bottom: 35px;
 }
 
 .hands .hand {
@@ -138,16 +140,15 @@
 */
 .result{
     height: 300px;
-    /* width: 100vh; */
-    /* display: flex; */
+    width: 100vh;
+    display: none; 
     margin-top: 30px;
-    display: none;
+    display:flex;
     flex-direction: row;
     justify-content: center;
   }
 .result img{
-    height: 300px;
-    width: 300px;
+    height: 100%;
     display: block;
     margin-top: 10px;
 }
@@ -156,14 +157,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 400px;
+  height: 100%;
   color: white;
 }
 .handComputer{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 400px;
+    height: 100%;
     padding: 0px -50px;
     color: white
 }
@@ -179,7 +180,7 @@
     align-items: center;
     justify-content: center;
     margin: 0px 30px;
-    height: 400px;
+    height: 100%;
     color: white;
     font-size: 1.5rem;
 }
@@ -252,3 +253,86 @@ box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.69);
   top: 100px;
   left: 50%;
 } */
+@media screen and (max-width: 1200px){
+  .hands
+  {
+    margin: 0;
+  }
+  .result
+  {
+    width: 10 0%;
+  }
+
+}
+@media screen and (max-width: 736px){
+  
+  .scoreboard{
+    width: 80%;
+  }
+  .score
+  {
+    width: 35%;
+  }
+  .hands
+  {
+    margin: 0;
+  }
+  .hands img{
+    height: 110px;
+    width: 110px;
+  }
+  .rules
+  {
+    bottom: 20px;
+  }
+  .rulespan img{
+    margin: -10% auto 0 auto;
+    width: 80%;
+  }
+  .result img{
+    height: 60%;
+  }
+}
+/* ------------------------------------------------------------------------------------------------------ */
+@media screen and (max-width: 480px){
+  .hands
+  {
+    position: relative;
+    height: 250px;
+    width: 250px;
+    background-size: contain;
+    margin-top: 100px;
+  }
+  .hands img{
+    height: 80px;
+    width: 80px;
+  }
+  .hands .rock{
+    position: absolute;
+    bottom: -40px;
+    left: 0px;
+  }
+.hands .paper{
+    position:absolute;
+    right: -50px; 
+    top: 50px;
+}
+.hands .scissors{
+  position: absolute;
+  left: calc(50% - 40px);
+  top: -20px;
+}
+.hands .spock{
+  position: absolute;
+    left: -30px;
+    top: 50px;
+  }
+  .hands .lizard{
+    position: absolute;
+    right: 0px;
+    bottom: -40px;
+}
+.result{
+  flex-direction: column;
+}
+}

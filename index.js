@@ -17,6 +17,8 @@ let scissors = './assests/Scissors.png'
 let lizard = './assests/lizard.png'
 let spock = './assests/spock.png' 
 
+result.style.display= 'none'
+
 let score = 0
 let handPicked 
 let AI
@@ -183,6 +185,7 @@ const playAgain = () => {
 const rulesEnter = () =>{
     span.style.display = 'flex'
     hands.style.display = 'none'
+    result.style.display = 'none'
     rules.style.display= 'none'
     rulesQuit.style.display= 'flex'
 }
